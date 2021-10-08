@@ -1,0 +1,20 @@
+---
+layout: default
+title: "Overview breadcrumb menus"
+---
+<h1>Overview breadcrumb menus</h1>
+<ul>
+    {% assign current_page = page %}
+    {% assign sorted_pages = site.pages | sort: "title" %}
+    {% for page in sorted_pages %}
+    {% if page.title != null and page.title != current_page.title %}
+    <li>
+        <a href="{{page.url}}">
+            {{page.title}}
+        </a>
+    </li> 
+    {% endif %}  
+    {% endfor %}
+
+</ul>
+
