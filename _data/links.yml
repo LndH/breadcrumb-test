@@ -1,0 +1,9 @@
+menus:
+- title: Welcome to the VUB menu
+  items:
+  - name: Welcome to the VUB
+    url: https://canvas.vub.be/courses/21247/pages/welcome-to-the-vub
+  - name: How do you make new friends?
+    url: https://canvas.vub.be/courses/21247/pages/how-do-you-make-new-friends
+  - name: VUB Buddy
+    url: https://canvas.vub.be/courses/21247/pages/buddy-scheme-at-vub

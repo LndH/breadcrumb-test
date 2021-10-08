@@ -1,0 +1,11 @@
+<ul class="breadcrumb-arrows">
+    {% for menu in site.data.links.menus %}
+      {% for entry in menu.items %}
+      <li>
+        <a href="{{entry.url}}">
+          {{entry.name}}
+        </a>
+      </li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
