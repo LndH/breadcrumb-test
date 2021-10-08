@@ -4,6 +4,6 @@ title: "" # the name of your site, e.g. ACME Corp.
 
 page_gen:
 - data: 'links'
-  template: 'default'
+  template: 'menu'
   name: 'title'
   dir: 'menus'
