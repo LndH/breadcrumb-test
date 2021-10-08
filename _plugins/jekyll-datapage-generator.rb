@@ -143,6 +143,7 @@ module Jekyll
           index_files_for_this_data = data_spec['index_files'] != nil ? data_spec['index_files'] : index_files
           template         = data_spec['template'] || data_spec['data']
           name             = data_spec['name']
+          subname          = data_spec['subname'] #
           name_expr        = data_spec['name_expr']
           title            = data_spec['title']
           title_expr       = data_spec['title_expr']
@@ -161,6 +162,19 @@ module Jekyll
             data_spec['data'].split('.').each do |level|
               if records.nil?
                 records = site.data[level]
+                new_records = Array.new
+                records.each do |record|
+                  #puts record
+                  #puts "---"
+                  record['items'].each do |page_record|
+                    new_record = {"title" => page_record['name'], "items" => record['items']}
+                    new_records.append(new_record)
+                    #puts new_record
+                    #puts page_record['name']
+                  end
+                end
+                puts new_records
+                records = new_records
               else
                 records = records[level]
               end
