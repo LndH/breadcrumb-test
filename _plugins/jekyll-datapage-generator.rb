@@ -143,7 +143,6 @@ module Jekyll
           index_files_for_this_data = data_spec['index_files'] != nil ? data_spec['index_files'] : index_files
           template         = data_spec['template'] || data_spec['data']
           name             = data_spec['name']
-          subname          = data_spec['subname'] #
           name_expr        = data_spec['name_expr']
           title            = data_spec['title']
           title_expr       = data_spec['title_expr']

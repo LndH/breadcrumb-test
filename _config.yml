@@ -6,5 +6,4 @@ page_gen:
 - data: 'links'
   template: 'menu'
   name: 'title'
-  subname: 'name'
   dir: 'menus'
