@@ -16,8 +16,8 @@ layout: default
 %}
 <link rel="stylesheet" href="{{base}}/assets/css/main.css">
 <ul class="breadcrumb-arrows">
-    {% for menu in site.data.links %}
-      {% for entry in menu.items %}
+ 
+      {% for entry in page.items %}
         {% if page.title == entry.name %}
           <li class="active">
         {% else %}
@@ -28,5 +28,5 @@ layout: default
         </a>
       </li>
       {% endfor %}
-    {% endfor %}
+
   </ul>

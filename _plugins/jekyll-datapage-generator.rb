@@ -162,19 +162,31 @@ module Jekyll
             data_spec['data'].split('.').each do |level|
               if records.nil?
                 records = site.data[level]
-                new_records = Array.new
+                temp_records = Array.new
+                puts "----"
                 records.each do |record|
                   #puts record
                   #puts "---"
+                  new_records = Array.new
+                  record_items = record['items']
+                  puts record_items
+                  puts "---"
                   record['items'].each do |page_record|
-                    new_record = {"title" => page_record['name'], "items" => record['items']}
-                    new_records.append(new_record)
+                    
+                    new_record = {"title" => page_record['name'], "items" => record_items}
+                    temp_records.append(new_record)
                     #puts new_record
                     #puts page_record['name']
                   end
+                  #temp_records.push(new_records)
                 end
-                puts new_records
-                records = new_records
+                #puts new_records
+                records = temp_records
+                puts "$$$$----"
+                records.each do |r|
+                  puts r 
+                  puts "$$$$"
+                end
               else
                 records = records[level]
               end
