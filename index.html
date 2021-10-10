@@ -9,7 +9,7 @@ title: "Overview breadcrumb menus"
     {% for page in sorted_pages %}
     {% if page.title != null and page.title != current_page.title %}
     <li>
-        <a href="{{page.url}}">
+        <a href="{{site.baseurl}}{{page.url}}">
             {{page.title}}
         </a>
     </li> 
