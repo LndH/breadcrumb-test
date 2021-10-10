@@ -37,7 +37,7 @@ jobs:
       - name: remove all files, but keep html site
         run: |
           shopt -s extglob
-          rm -v !("_site")
+          rm -v -r !("_site")
           shopt -u extglob
           mv _site .
           rm -r _site
