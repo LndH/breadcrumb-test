@@ -53,4 +53,5 @@ jobs:
           files: .
           repository: https://github.com/LndH/breadcrumb-test
           token: ${{ secrets.MY_SECRET_TOKEN }}
+          force: true
 
