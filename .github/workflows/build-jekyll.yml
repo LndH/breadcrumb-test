@@ -19,39 +19,33 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
+      # checkout master
       - uses: actions/checkout@v2
         with:
-          ref: gh-pages
+          ref: master
 
-      - uses: actions/checkout@master
+      - name: Build
+        uses: jerryjvl/jekyll-build-action@v1
 
-      - name: merge master into gh-pages
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          from_branch: master
-          target_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-
-      - name: remove all files, but keep html site
-        run: |
-          shopt -s extglob
-          rm -v -r !("_site")
-          shopt -u extglob
-          cd _site
-          mv * ../
-          cd ..
-          rm -r _site
-
-      - name: push
+      - name: push changes on master
         uses: actions-x/commit@v2
         with:
           email: me@example.com
           name: GitHub Actions Autocommitter
-          branch: gh-pages
+          branch: master
           files: .
           repository: https://github.com/LndH/breadcrumb-test
           token: ${{ secrets.GITHUB_TOKEN }}
           force: true
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+
+     
+
+
+    
 
