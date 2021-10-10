@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: merge master into gh-pages
-        uses: devmasx/merge-branch@v1.4.0
+        uses: devmasx/merge-branch@master
         with:
           type: now
           from_branch: master
