@@ -20,14 +20,14 @@ jobs:
             ${{ runner.os }}-gems-
 
       - name: merge master into gh-pages branch
-      run: |
-        git checkout gh-pages
-        git merge master
-        shopt -s extglob
-        rm -v !("_site")
-        shopt -u extglob
-        mv _site .
-        rm -r _site
+        run: |
+          git checkout gh-pages
+          git merge master
+          shopt -s extglob
+          rm -v !("_site")
+          shopt -u extglob
+          mv _site .
+          rm -r _site
 
       # Use GitHub Deploy Action to build and deploy to Github
       - uses: jeffreytse/jekyll-deploy-action@v0.3.0
