@@ -23,6 +23,8 @@ jobs:
         with:
           ref: gh-pages
 
+      - uses: actions/checkout@master
+
       - name: merge master into gh-pages
         uses: devmasx/merge-branch@v1.4.0
         with:
