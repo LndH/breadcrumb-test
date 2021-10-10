@@ -39,7 +39,9 @@ jobs:
           shopt -s extglob
           rm -v -r !("_site")
           shopt -u extglob
-          mv _site .
+          cd _site
+          mv * ../
+          cd ..
           rm -r _site
 
       # Use GitHub Deploy Action to build and deploy to Github
