@@ -31,7 +31,7 @@ jobs:
           type: now
           from_branch: master
           target_branch: gh-pages
-          github_token: ${{ github.token }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
       - name: remove all files, but keep html site
@@ -52,6 +52,6 @@ jobs:
           branch: gh-pages
           files: .
           repository: https://github.com/LndH/breadcrumb-test
-          token: ${{ secrets.MY_SECRET_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           force: true
 
