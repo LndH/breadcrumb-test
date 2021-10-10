@@ -43,3 +43,14 @@ jobs:
           mv * ../
           cd ..
           rm -r _site
+
+      - name: push
+        uses: actions-x/commit@v2
+        with:
+          email: me@example.com
+          name: GitHub Actions Autocommitter
+          branch: gh-pages
+          files: .
+          repository: https://github.com/LndH/breadcrumb-test
+          token: ${{ secrets.MY_SECRET_TOKEN }}
+
