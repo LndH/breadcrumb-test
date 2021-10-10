@@ -19,10 +19,21 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      - name: merge master into gh-pages branch
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+
+      - name: merge master into gh-pages
+        uses: devmasx/merge-branch@v1.4.0
+        with:
+          type: now
+          from_branch: master
+          target_branch: gh-pages
+          github_token: ${{ github.token }}
+
+
+      - name: remove all files, but keep html site
         run: |
-          git checkout gh-pages
-          git merge master
           shopt -s extglob
           rm -v !("_site")
           shopt -u extglob
